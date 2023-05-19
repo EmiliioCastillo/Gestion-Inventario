@@ -23,20 +23,18 @@ public class PageRender <T>{
         numTotalPaginas = page.getTotalPages();
         pagActual = page.getNumber() + 1;
 
-        //Logica para manejar los rangos de la paginacion
+     
         int desde, hasta;
-        //Si el total de paginas es menor al numero de elementos que hay dentro de la pagina
-        //entonces mostrara desde la primera hasta la ultima pagina donde haya elementos que mostrar
+   
         if(numTotalPaginas <= numElemPaginas){
             desde = 1;
             hasta = numTotalPaginas;
-            //Sino si en la pagina actual es menor al numdelementos por pagina va a ir desde la 1 hasta la última
+     
         }else {
             if(pagActual < numElemPaginas / 2){
                 desde = 1;
                 hasta = numElemPaginas;
-                //Sino si en la pagina actual es mayor a 20 ( num elementos por pagina 10/2 = 5 y numtotalpag = 25, 25 - 5 = 20
-                //va a mostar desde la pagina 16 hasta la final
+             
             } else if(pagActual > numTotalPaginas - numElemPaginas / 2){
                 desde = numTotalPaginas - numElemPaginas + 1;
                 hasta = numTotalPaginas;
