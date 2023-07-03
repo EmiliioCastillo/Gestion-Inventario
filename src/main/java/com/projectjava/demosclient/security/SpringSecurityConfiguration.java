@@ -31,7 +31,7 @@ public class SpringSecurityConfiguration {
         auth.userDetailsService(userService).passwordEncoder(new BCryptPasswordEncoder());
     }
 
-//Los bean son componentes reutilizables que son definidos para un objetivo en concreto. Nunca olvidarme :)
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
